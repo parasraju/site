@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional AI Services Ad</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .ad-container {
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ad-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #555;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+        
+        .price-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+        
+        .ai-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .ai-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .ai-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: #667eea;
+        }
+        
+        .ai-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .chatbot .ai-icon { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .image-ai .ai-icon { background: linear-gradient(135deg, #ff6b6b, #ee5a52); }
+        .analytics .ai-icon { background: linear-gradient(135deg, #4ecdc4, #44a08d); }
+        .automation .ai-icon { background: linear-gradient(135deg, #45b7d1, #2196f3); }
+        .voice-ai .ai-icon { background: linear-gradient(135deg, #96ceb4, #8bc34a); }
+        .writing .ai-icon { background: linear-gradient(135deg, #ffeaa7, #fab1a0); }
+        
+        .ai-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .ai-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .features {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        
+        .features-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .feature-item::before {
+            content: '✨';
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .floating-icon {
+            position: absolute;
+            font-size: 2rem;
+            color: rgba(102, 126, 234, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .floating-icon:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .floating-icon:nth-child(2) { top: 20%; right: 10%; animation-delay: 1s; }
+        .floating-icon:nth-child(3) { bottom: 20%; left: 15%; animation-delay: 2s; }
+        .floating-icon:nth-child(4) { bottom: 10%; right: 20%; animation-delay: 3s; }
+        
+        .testimonial {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .ad-container {
+                padding: 40px 20px;
+            }
+            
+            .ai-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ad-container">
+        <div class="floating-elements">
+            <div class="floating-icon">🤖</div>
+            <div class="floating-icon">🧠</div>
+            <div class="floating-icon">⚡</div>
+            <div class="floating-icon">🚀</div>
+        </div>
+        
+        <div class="header">
+            <h1 class="main-title">ALL-IN-ONE AI SERVICES</h1>
+            <p class="subtitle">Transform Your Business with Cutting-Edge Artificial Intelligence</p>
+            <div class="price-badge">Starting at ₹1,500</div>
+        </div>
+        
+        <div class="ai-grid">
+            <div class="ai-card chatbot">
+                <div class="ai-icon">🤖</div>
+                <h3 class="ai-title">AI Chatbots</h3>
+                <p class="ai-description">Intelligent conversational AI that handles customer support, lead generation, and user engagement 24/7</p>
+            </div>
+            
+            <div class="ai-card image-ai">
+                <div class="ai-icon">🎨</div>
+                <h3 class="ai-title">AI Image Generation</h3>
+                <p class="ai-description">Create stunning visuals, logos, and artwork using advanced AI image generation technology</p>
+            </div>
+            
+            <div class="ai-card analytics">
+                <div class="ai-icon">📊</div>
+                <h3 class="ai-title">Data Analytics AI</h3>
+                <p class="ai-description">Advanced data analysis and insights generation to drive informed business decisions</p>
+            </div>
+            
+            <div class="ai-card automation">
+                <div class="ai-icon">⚡</div>
+                <h3 class="ai-title">Process Automation</h3>
+                <p class="ai-description">Automate repetitive tasks and workflows to increase efficiency and reduce operational costs</p>
+            </div>
+            
+            <div class="ai-card voice-ai">
+                <div class="ai-icon">🎤</div>
+                <h3 class="ai-title">Voice AI</h3>
+                <p class="ai-description">Natural language processing for voice commands, transcription, and speech synthesis</p>
+            </div>
+            
+            <div class="ai-card writing">
+                <div class="ai-icon">✍️</div>
+                <h3 class="ai-title">AI Content Writing</h3>
+                <p class="ai-description">Generate high-quality content, blogs, social media posts, and marketing copy instantly</p>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h2 class="features-title">Why Choose Our AI Services?</h2>
+            <div class="features-grid">
+                <div class="feature-item">Custom AI Solutions</div>
+                <div class="feature-item">24/7 Support</div>
+                <div class="feature-item">Scalable Architecture</div>
+                <div class="feature-item">Cost-Effective Pricing</div>
+                <div class="feature-item">Quick Implementation</div>
+                <div class="feature-item">Regular Updates</div>
+                <div class="feature-item">Data Security</div>
+                <div class="feature-item">Multi-Platform Integration</div>
+            </div>
+        </div>
+        
+        <div class="testimonial">
+            <p class="testimonial-text">The AI solutions transformed our business operations completely. Customer engagement increased by 300% and our operational costs reduced by 40%.</p>
+            <p class="testimonial-author">— Paras </p>
+        </div>
+        
+        <div class="cta-section">
+            <a href="#contact" class="cta-button">Get Started Today →</a>
+            <div class="contact-info">
+                <p>📧 NONE | 📱 </p>
+                <p>🌐 NONE | 📱 </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling and interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate cards on scroll
+            const cards = document.querySelectorAll('.ai-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease';
+                observer.observe(card);
+            });
+            
+            // Add click tracking for CTA button
+            document.querySelector('.cta-button').addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Thank you for your interest! Contact at Telegram Username-@exxxorcistt');
+            });
+            
+            // Floating animation enhancement
+            const floatingIcons = document.querySelectorAll('.floating-icon');
+            floatingIcons.forEach((icon, index) => {
+                icon.style.animationDelay = `${index * 0.5}s`;
+            });
+        });
+    </script>
+</body>
+</html>
+
